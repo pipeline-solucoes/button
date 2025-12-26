@@ -4,8 +4,7 @@ import { Box, IconButton, SvgIconProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const StyledBox = styled(Box, {
-  shouldForwardProp: (prop) =>
-    !['background_color', 'padding', 'border'].includes(prop as string),
+  shouldForwardProp: (prop) => !['background_color', 'padding', 'border'].includes(prop as string),
 })<{
   background_color: string;
   padding: string;
@@ -18,52 +17,51 @@ const StyledBox = styled(Box, {
   border: border,
 }));
 
-/**
- * Propriedades do componente `CircularIconLink`.
- */
-export interface CircularIconLinkProps {
-  /**
-   * Ícone do Material UI (`<SvgIcon>`) ou uma imagem (`<img>`).
-   * Aceita:
-   * ```tsx
-   * <Instagram sx={{ color: 'white' }} />
-   * // ou
-   * <img src="/logo.png" alt="logo" width={24} height={24} />
-   * ```
-   */
+
+export interface CircularIconLinkProps {  
   children: ReactElement<HTMLImageElement> | ReactElement<SvgIconProps>;
-
-  /** URL a ser aberta (opcional se onClick for usado) */
   url?: string;
-
-  /** Cor de fundo do círculo */
   background_color: string;
-
-  /** Texto para acessibilidade (`aria-label`) */
   aria_label: string;
-
-  /** Padding interno do círculo. @default "4px" */
   padding?: string;
-
-  /** Estilo da borda. @default "2px solid transparent" */
   border?: string;
-
-  /** Define se o link será aberto em nova aba. @default true */
   openInNewTab?: boolean;
-
-  /** Evento de clique customizado. Se definido, sobrescreve o comportamento padrão */
   onClick?: () => void;
 }
 
 /**
- * **CircularIconLink**
+ * Componente que exibe um ícone/imagem dentro de um container circular clicável,
+ * ideal para links de redes sociais ou ações rápidas com aparência consistente.
  *
- * Componente que exibe um **ícone ou imagem dentro de um círculo clicável**,
- * permitindo criar links visuais para redes sociais, sites ou qualquer URL externa.
+ * @param {React.ReactElement<HTMLImageElement> | React.ReactElement<SvgIconProps>} children Ícone do Material UI (`<SvgIcon>`) ou uma imagem (`<img>`) renderizada dentro do botão. Obrigatório.
+ * @param {string} [url] URL a ser aberta ao clicar (opcional se `onClick` for usado).
+ * @param {string} background_color Cor de fundo do círculo. Obrigatório.
+ * @param {string} aria_label Texto de acessibilidade aplicado no `aria-label` do botão. Obrigatório.
+ * @param {string} [padding="4px"] Espaçamento interno do círculo.
+ * @param {string} [border="none"] Estilo da borda do círculo.
+ * @param {boolean} [openInNewTab=true] Se `true`, abre a `url` em nova aba; caso contrário abre na mesma aba.
+ * @param {() => void} [onClick] Callback de clique customizado. Se definido, tem prioridade sobre a abertura da `url`.
  *
- * - Aceita ícones do Material UI (`<SvgIcon>`) ou imagens (`<img>`).
- * - O círculo possui cor de fundo, padding e borda personalizáveis.
- * - Ao clicar, executa o `onClick` se definido, caso contrário abre a `url` em nova aba ou na mesma aba.
+ * @example
+ * ```tsx
+ * import InstagramIcon from '@mui/icons-material/Instagram';
+ * import { CircularIconLink } from '@/components';
+ *
+ * const Example = () => {
+ *   return (
+ *     <CircularIconLink
+ *       url="https://instagram.com/sua_conta"
+ *       aria_label="Abrir Instagram"
+ *       background_color="#E1306C"
+ *       padding="6px"
+ *       border="2px solid rgba(255,255,255,0.3)"
+ *       openInNewTab
+ *     >
+ *       <InstagramIcon sx={{ color: '#fff' }} />
+ *     </CircularIconLink>
+ *   );
+ * };
+ * ```
  */
 const CircularIconLink: React.FC<CircularIconLinkProps> = ({
   url,
@@ -92,4 +90,5 @@ const CircularIconLink: React.FC<CircularIconLinkProps> = ({
   );
 };
 
+CircularIconLink.displayName = 'CircularIconLink';
 export default CircularIconLink;
