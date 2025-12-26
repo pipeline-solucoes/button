@@ -1,13 +1,13 @@
 {
-  "name": "pipesol-button",
-  "version": "1.0.14-beta.05",
+  "name": "@pipelinesolucoes/button",
+  "version": "1.0.0-beta.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeline-solucoes/cmp-button"
+    "url": "https://github.com/pipeline-solucoes/button.git"
   },
-  "homepage": "https://github.com/pipeline-solucoes/cmp-button#readme",
+  "homepage": "https://github.com/pipeline-solucoes/button#readme",
   "bugs": {
-    "url": "https://github.com/pipeline-solucoes/cmp-button/issues"
+    "url": "https://github.com/pipeline-solucoes/button/issues"
   },
   "publishConfig": {
     "access": "public"
@@ -26,9 +26,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
-    "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
