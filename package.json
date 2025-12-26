@@ -1,0 +1,58 @@
+{
+  "name": "pipesol-button",
+  "version": "1.0.14-beta.05",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeline-solucoes/cmp-button"
+  },
+  "homepage": "https://github.com/pipeline-solucoes/cmp-button#readme",
+  "bugs": {
+    "url": "https://github.com/pipeline-solucoes/cmp-button/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^6.4.4 || ^7.3.0",
+    "@mui/material": "^6.4.4 || ^7.3.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.1",
+    "@eslint/eslintrc": "^3",
+    "@mui/icons-material": "^7.3.0",
+    "@mui/material": "^7.3.0",
+    "@types/node": "^20",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19",
+    "@types/react-input-mask": "^3.0.6",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "next": "^15.2.3",
+    "typescript": "^5"
+  }
+}
