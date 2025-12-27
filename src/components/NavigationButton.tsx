@@ -82,7 +82,7 @@ interface NavigationButtonProps extends CommonStyleProps  {
  *
  * Uso da prop `kind`:
  * - A prop `kind` aplica estilos automaticamente a partir dos tokens
- *   definidos no tema do projeto (`theme.palette.custom`) conforme README”.
+ *   definidos no tema do projeto (`theme.pipesol?.buttons`) conforme README”.
  * - Para utilizar `kind`, é necessário que o projeto implemente essa
  *   estrutura no `ThemeProvider`.
  * - Caso o tema não possua essa configuração, o componente continuará

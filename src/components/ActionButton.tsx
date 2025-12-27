@@ -17,11 +17,20 @@ export interface ActionButtonProps extends CommonStyleProps {
 
 /**
  * Botão estilizado baseado no tema e com tipografia configurável via `variant`.
+ * 
+ *  Uso da prop `kind`:
+ * - A prop `kind` aplica estilos automaticamente a partir dos tokens
+ *   definidos no tema do projeto (`theme.pipesol?.buttons`) conforme README”.
+ * - Para utilizar `kind`, é necessário que o projeto implemente essa
+ *   estrutura no `ThemeProvider`.
+ * - Caso o tema não possua essa configuração, o componente continuará
+ *   funcionando normalmente, utilizando apenas os valores informados
+ *   via props ou os padrões do Material UI.
  *
  * @param {string} text Texto exibido dentro do botão.
  * @param {TypographyVariant} [variant="body1"] Variante da tipografia usada no texto.
  * @param {React.ReactNode} icon Ícone opcional exibido antes do texto.
- * @param {'none' | 'primary' | 'secondary'} [kind="none"] Token visual aplicado ao botão.
+ * @param {ButtonKind} [kind="none"] Token visual aplicado ao botão.
  * @param {string} [width="auto"] Largura do botão.
  * @param {string} [height="auto"] Altura do botão.
  * @param {string} [padding="12px 20px"] Espaçamento interno.

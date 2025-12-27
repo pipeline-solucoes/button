@@ -30,6 +30,100 @@ A biblioteca inclui os seguintes componentes:
 
 ---
 
+## Theme (opcional) — habilitar `kind` com tokens do tema
+
+Os componentes de botão desta lib suportam a prop `kind` (ex.: `primary`, `secondary`, `tertiary`, `delete`) para aplicar **tokens de estilo** definidos no tema do projeto.
+
+**Observação**
+ - Se o tema não estiver configurado, os componentes permitem estilização via props (fallback), e kind não aplicará tokens do tema.
+ - Se você adicionar/alterar global.d.ts ou declarations.d.ts, pode ser necessário reiniciar o TypeScript Server no editor.
+
+Para que o TypeScript reconheça `pipesol` em `createTheme` e para que o `kind` funcione corretamente, siga os passos abaixo.
+
+---
+
+### 1) Carregar a tipagem do tema (TypeScript)
+
+Adicione **uma única vez** no seu projeto (recomendado em `global.d.ts` ou `declarations.d.ts`):
+
+```ts
+import "@pipelinesolucoes/button/mui-theme";
+export {};
+```
+
+### 2) Configurar os tokens no tema do projeto
+
+No seu tema (theme.ts, theme.tsx, etc.), inclua pipesol.buttons com os estilos desejados:
+import { createTheme } from "@mui/material/styles";
+
+```ts
+export const theme = createTheme({
+  pipesol: {
+    buttons: {
+      primary: {
+        background: "#216fed",
+        backgroundHover: "#005ce3",
+        color: "#fff",
+        colorHover: "#fff",
+        borderRadius: "9999px",
+        padding: "8px 24px",
+      },
+      secondary: {
+        background: "#fff",
+        backgroundHover: "#fff",
+        color: "#216fed",
+        colorHover: "#005ce3",
+        borderRadius: "9999px",
+        padding: "8px 24px",
+      },
+      // opcionais
+      delete: {
+        background: "#F44336",
+        backgroundHover: "#D32F2F",
+        color: "#fff",
+        colorHover: "#fff",
+        borderRadius: "9999px",
+        padding: "8px 24px",
+      },
+    },
+  },
+});
+```
+Tokens disponíveis por botão:
+ - background
+ - backgroundHover
+ - color
+ - colorHover
+ - borderRadius
+ - padding
+ - boxShadow (opcional)
+
+### 3) Usar kind nos componentes
+
+Com o tema configurado, basta usar a prop kind:
+
+```ts
+import { NavigationButton } from "@pipelinesolucoes/button";
+
+export function Example() {
+  return (
+    <>
+      <NavigationButton kind="primary" url="#contato" aria_label="Ir para contato" width="fit-content">
+        Fale conosco
+      </NavigationButton>
+
+      <NavigationButton kind="secondary" url="/sobre" aria_label="Ir para sobre" width="fit-content">
+        Saiba mais
+      </NavigationButton>
+
+      <NavigationButton kind="delete" url="#remover" aria_label="Remover" width="fit-content">
+        Remover
+      </NavigationButton>
+    </>
+  );
+}
+```
+
 ## ✨ Características
 
 - ✅ Pronto para produção
