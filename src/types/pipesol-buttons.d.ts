@@ -1,5 +1,5 @@
 import "@mui/material/styles";
-import type { ButtonKind } from "./ButtonKind";
+import type { ButtonKind } from "../types/ButtonKind";
 
 export interface PipeSolButtonTokens {
   background: string;
