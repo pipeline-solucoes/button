@@ -1,9 +1,9 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { ButtonKind } from "../types/ButtonKind";
 import { StyledButtonKind } from "./StyledButton";
 import { TypographyVariant } from "@mui/material/styles";
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
+import { ButtonKind } from "../types/pipesol-buttons";
 
 export interface ActionButtonProps extends CommonStyleProps {
   kind?: ButtonKind;  

@@ -1,5 +1,6 @@
 import "@mui/material/styles";
-import type { ButtonKind } from "../types/ButtonKind";
+
+export type ButtonKind = "primary" | "secondary" | "tertiary" | "delete" | "none";
 
 export interface PipeSolButtonTokens {
   background: string;

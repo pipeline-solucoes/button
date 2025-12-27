@@ -1,5 +1,5 @@
 import { PipeSolButtonTokens } from "../types/pipesol-buttons";
-import { ButtonKind } from "../types/ButtonKind";
+import { ButtonKind } from "../types/pipesol-buttons";
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
 import { Button, styled } from "@mui/material";

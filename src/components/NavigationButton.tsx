@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { styled, TypographyVariant } from '@mui/material/styles';
-import { ButtonKind } from '../types/ButtonKind';
+import { ButtonKind } from "../types/pipesol-buttons";
 import { ButtonStyleProps } from './StyledButton';
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { Typography } from '@mui/material';
