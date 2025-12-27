@@ -1,7 +1,8 @@
+import { PipeSolButtonTokens } from "@/pipesol-buttons";
 import { ButtonKind } from "../types/ButtonKind";
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
-import { Button, ButtonOptions, styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
 export interface ButtonStyleProps extends CommonStyleProps {
   kind: ButtonKind;
@@ -13,23 +14,14 @@ export const StyledButtonKind = styled(Button, {
   <ButtonStyleProps>
   (({ theme, kind = "primary", width, height, padding, margin, background, backgroundHover, colorText, colorHover, borderRadius, boxShadow }) => {
     
-    let tokens: ButtonOptions | undefined;
+    let tokens: PipeSolButtonTokens | undefined;
     switch (kind) {
-      case "primary":
-        tokens = theme.palette.custom?.primaryButton;
-        break;
-
-      case "secondary":
-        tokens = theme.palette.custom?.secondaryButton;
-        break;
-      
-      case "tertiary":
-            tokens = theme.palette.custom?.tertiaryButton;
-            break;    
-
-      case "delete":
-        tokens = theme.palette.custom?.deleteButton;
-        break;
+    case "primary":
+    case "secondary":
+    case "tertiary":
+    case "delete":
+      tokens = theme.pipesol?.buttons?.[kind];
+      break;
     }
 
 

@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { ButtonOptions, styled, TypographyVariant } from '@mui/material/styles';
+import { styled, TypographyVariant } from '@mui/material/styles';
 import { ButtonKind } from '../types/ButtonKind';
 import { ButtonStyleProps } from './StyledButton';
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { Typography } from '@mui/material';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
+import { PipeSolButtonTokens } from '@/pipesol-buttons';
 
 const ButtonStyled = styled('a', {
   shouldForwardProp: (prop) =>
@@ -27,24 +28,15 @@ const ButtonStyled = styled('a', {
     boxShadow,
   }) => {
 
-    let tokens: ButtonOptions | undefined;
-        switch (kind) {
-          case "primary":
-            tokens = theme.palette.custom?.primaryButton;
-            break;
-    
-          case "secondary":
-            tokens = theme.palette.custom?.secondaryButton;
-            break;
-
-          case "tertiary":
-            tokens = theme.palette.custom?.tertiaryButton;
-            break;  
-    
-          case "delete":
-            tokens = theme.palette.custom?.deleteButton;
-            break;
-        }
+    let tokens: PipeSolButtonTokens | undefined;
+    switch (kind) {
+    case "primary":
+    case "secondary":
+    case "tertiary":
+    case "delete":
+      tokens = theme.pipesol?.buttons?.[kind];
+      break;
+    }
     
 
     return {

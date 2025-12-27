@@ -9,6 +9,7 @@ export { default as WhatsAppIcon} from './components/WhatsAppIcon';
 export { default as ActionButton } from "./components/ActionButton";
 export { default as FormButtonGroup } from "./components/FormButtonGroup";
 
+export type { PipeSolButtonTokens } from "./pipesol-buttons";
 export type { ButtonKind } from "./types/ButtonKind";
 export type { BorderProps } from "./types/style/BorderProps";
 export type { ColorProps } from "./types/style/ColorProps";
