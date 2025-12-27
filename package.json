@@ -22,10 +22,13 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
+    },
+    "./mui-theme": {
+      "types": "./dist/mui-theme.d.ts"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node scripts/copy-theme-dts.cjs",
     "lint": "eslint .",
     "prepublishOnly": "npm run build"
   },

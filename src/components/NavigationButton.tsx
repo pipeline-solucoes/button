@@ -7,7 +7,7 @@ import { ButtonStyleProps } from './StyledButton';
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { Typography } from '@mui/material';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
-import { PipeSolButtonTokens } from '@/pipesol-buttons';
+import { PipeSolButtonTokens } from '../types/pipesol-buttons';
 
 const ButtonStyled = styled('a', {
   shouldForwardProp: (prop) =>

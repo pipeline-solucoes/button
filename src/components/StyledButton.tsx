@@ -1,4 +1,4 @@
-import { PipeSolButtonTokens } from "@/pipesol-buttons";
+import { PipeSolButtonTokens } from "../types/pipesol-buttons";
 import { ButtonKind } from "../types/ButtonKind";
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
