@@ -1,4 +1,4 @@
 /**
  * Tipos de botão suportados pelo tema.
  */
-export type ButtonKind = "primary" | "secondary" | "delete" | "none";
+export type ButtonKind = "primary" | "secondary" | "tertiary" | "delete" | "none";

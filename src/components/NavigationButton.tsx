@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { styled, TypographyVariant } from '@mui/material/styles';
+import { ButtonOptions, styled, TypographyVariant } from '@mui/material/styles';
 import { ButtonKind } from '../types/ButtonKind';
 import { ButtonStyleProps } from './StyledButton';
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
@@ -26,14 +26,26 @@ const ButtonStyled = styled('a', {
     margin,
     boxShadow,
   }) => {
-    const tokens =
-      kind === 'primary'
-        ? theme.palette.custom.primaryButton
-        : kind === 'secondary'
-        ? theme.palette.custom.secondaryButton
-        : kind === 'delete'
-        ? theme.palette.custom.deleteButton
-        : undefined;
+
+    let tokens: ButtonOptions | undefined;
+        switch (kind) {
+          case "primary":
+            tokens = theme.palette.custom?.primaryButton;
+            break;
+    
+          case "secondary":
+            tokens = theme.palette.custom?.secondaryButton;
+            break;
+
+          case "tertiary":
+            tokens = theme.palette.custom?.tertiaryButton;
+            break;  
+    
+          case "delete":
+            tokens = theme.palette.custom?.deleteButton;
+            break;
+        }
+    
 
     return {
       width: width ?? 'auto',      
@@ -75,6 +87,15 @@ interface NavigationButtonProps extends CommonStyleProps  {
  * Regras de navegação:
  * - Se `url` contiver `http`, o link é tratado como externo e abre em nova aba.
  * - Caso contrário, é tratado como link interno ou âncora.
+ *
+ * Uso da prop `kind`:
+ * - A prop `kind` aplica estilos automaticamente a partir dos tokens
+ *   definidos no tema do projeto (`theme.palette.custom`) conforme README”.
+ * - Para utilizar `kind`, é necessário que o projeto implemente essa
+ *   estrutura no `ThemeProvider`.
+ * - Caso o tema não possua essa configuração, o componente continuará
+ *   funcionando normalmente, utilizando apenas os valores informados
+ *   via props ou os padrões do Material UI.
  *
  * @param {ButtonKind} [kind="none"] Tipo de botão baseado nos tokens do tema.
  * @param {string} url URL ou âncora de destino.
