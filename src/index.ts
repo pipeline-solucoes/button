@@ -1,6 +1,4 @@
 
-import "./types/pipesol-buttons";
-
 export { default as CircularIconLink} from './components/CircularIconLink';
 export { default as NavigationButton} from './components/NavigationButton';
 export { default as DownloadButton} from './components/DownloadButton';
@@ -17,5 +15,6 @@ export type { BorderProps } from "./types/style/BorderProps";
 export type { ColorProps } from "./types/style/ColorProps";
 export type { LayoutProps } from "./types/style/LayoutProps";
 export type { CommonStyleProps } from "./types/style/CommonStyleProps";
+
 export { COMMON_STYLE_FORWARD_PROPS } from './types/CommonForwardProps';
 export * from './components/StyledButton';
