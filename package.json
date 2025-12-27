@@ -1,6 +1,6 @@
 {
   "name": "@pipelinesolucoes/button",
-  "version": "1.1.1-beta.4",
+  "version": "1.1.1-beta.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/pipeline-solucoes/button.git"
@@ -25,7 +25,9 @@
       "require": "./dist/index.js"
     },
     "./mui-theme": {
-      "types": "./dist/mui-theme.d.ts"
+      "types": "./dist/mui-theme.d.ts",
+      "import": "./dist/mui-theme.js",
+      "require": "./dist/mui-theme.js"
     }
   },
   "scripts": {
