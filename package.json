@@ -1,6 +1,7 @@
 {
   "name": "@pipelinesolucoes/button",
-  "version": "1.2.0-beta.2",
+  "version": "1.2.0-beta.3",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/pipeline-solucoes/button.git"
@@ -58,9 +59,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "next": "^16.0.7",
-    "typescript": "^5"
-  },
-  "dependencies": {
+    "typescript": "^5",
     "@pipelinesolucoes/theme": "^1.0.1"
   }
 }
