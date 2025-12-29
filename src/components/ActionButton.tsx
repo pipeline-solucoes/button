@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { StyledButtonKind } from "./StyledButton";
 import { TypographyVariant } from "@mui/material/styles";
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
-import { ButtonKind } from "../types/pipesol-buttons";
+import { ButtonKind } from "@pipelinesolucoes/theme";
 
 export interface ActionButtonProps extends CommonStyleProps {
   kind?: ButtonKind;  
@@ -20,7 +20,7 @@ export interface ActionButtonProps extends CommonStyleProps {
  * 
  *  Uso da prop `kind`:
  * - A prop `kind` aplica estilos automaticamente a partir dos tokens
- *   definidos no tema do projeto (`theme.pipesol?.buttons`) conforme README”.
+ *   definidos no tema do projeto (`theme.pipelinesolucoes?.buttons`) conforme README”.
  * - Para utilizar `kind`, é necessário que o projeto implemente essa
  *   estrutura no `ThemeProvider`.
  * - Caso o tema não possua essa configuração, o componente continuará

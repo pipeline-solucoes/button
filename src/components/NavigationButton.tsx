@@ -2,12 +2,11 @@
 
 import React from 'react';
 import { styled, TypographyVariant } from '@mui/material/styles';
-import { ButtonKind } from "../types/pipesol-buttons";
 import { ButtonStyleProps } from './StyledButton';
 import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
 import { Typography } from '@mui/material';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
-import { PipeSolButtonTokens } from '../types/pipesol-buttons';
+import { ButtonKind, PipelineSolucoesButtonTokens } from '@pipelinesolucoes/theme';
 
 const ButtonStyled = styled('a', {
   shouldForwardProp: (prop) =>
@@ -28,13 +27,13 @@ const ButtonStyled = styled('a', {
     boxShadow,
   }) => {
 
-    let tokens: PipeSolButtonTokens | undefined;
+    let tokens: PipelineSolucoesButtonTokens | undefined;
     switch (kind) {
     case "primary":
     case "secondary":
     case "tertiary":
     case "delete":
-      tokens = theme.pipesol?.buttons?.[kind];
+      tokens = theme.pipelinesolucoes?.buttons?.[kind];
       break;
     }
     

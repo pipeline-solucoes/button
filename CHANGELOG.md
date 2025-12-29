@@ -6,6 +6,9 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-12-29
+- Implementacao do theme base da pipelinesolucoes.
+
 ## [1.1.0] - 2025-12-27
 - Melhoria na estrutura do theme permitindo o projeto filho implementar o theme da lib.
 

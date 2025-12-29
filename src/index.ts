@@ -1,4 +1,6 @@
 
+export * from "./theme";
+
 export { default as CircularIconLink} from './components/CircularIconLink';
 export { default as NavigationButton} from './components/NavigationButton';
 export { default as DownloadButton} from './components/DownloadButton';
@@ -9,7 +11,6 @@ export { default as WhatsAppIcon} from './components/WhatsAppIcon';
 export { default as ActionButton } from "./components/ActionButton";
 export { default as FormButtonGroup } from "./components/FormButtonGroup";
 
-export type { ButtonKind, PipeSolButtonTokens } from "./types/pipesol-buttons";
 export type { BorderProps } from "./types/style/BorderProps";
 export type { ColorProps } from "./types/style/ColorProps";
 export type { LayoutProps } from "./types/style/LayoutProps";
