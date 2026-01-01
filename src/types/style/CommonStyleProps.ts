@@ -1,9 +1,12 @@
+import { TypographyVariant } from "@mui/material/styles";
+import { BorderProps, ColorProps, LayoutProps } from "@pipelinesolucoes/theme";
 
-import { LayoutProps } from "./LayoutProps";
-import { ColorProps } from "./ColorProps";
-import { BorderProps } from "./BorderProps";
 
 export interface CommonStyleProps
   extends LayoutProps,
     ColorProps,
-    BorderProps {}
+    BorderProps {
+  
+    colorText?: string; 
+    variant?: TypographyVariant; 
+  }

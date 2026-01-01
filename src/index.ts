@@ -9,11 +9,7 @@ export { default as ScrollToTopButton} from './components/ScrollToTopButton';
 export { default as WhatsAppButton} from './components/WhatsAppButton';
 export { default as WhatsAppIcon} from './components/WhatsAppIcon';
 export { default as ActionButton } from "./components/ActionButton";
-export { default as FormButtonGroup } from "./components/FormButtonGroup";
 
-export type { BorderProps } from "./types/style/BorderProps";
-export type { ColorProps } from "./types/style/ColorProps";
-export type { LayoutProps } from "./types/style/LayoutProps";
 export type { CommonStyleProps } from "./types/style/CommonStyleProps";
 
 export { COMMON_STYLE_FORWARD_PROPS } from './types/CommonForwardProps';

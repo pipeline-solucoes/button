@@ -10,4 +10,5 @@ export const COMMON_STYLE_FORWARD_PROPS = [
   "colorHover",
   "borderRadius",
   "boxShadow",
+  "colorText",
 ] as const;

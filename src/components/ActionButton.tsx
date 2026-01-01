@@ -66,7 +66,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
   background = "transparent",
   backgroundHover,
-  colorText,
+  color,
   colorHover,
   borderRadius = "0",
   boxShadow = "none",
@@ -85,7 +85,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
       onClick={onClick}
       background={background}
       backgroundHover={backgroundHover}
-      colorText={colorText}
+      colorText={color}
       colorHover={colorHover}
       borderRadius={borderRadius}
       boxShadow={boxShadow}

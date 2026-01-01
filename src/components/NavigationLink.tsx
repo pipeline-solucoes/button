@@ -1,55 +1,10 @@
 'use client';
 
 import React from 'react';
-import { styled, TypographyVariant } from '@mui/material/styles';
-import { LayoutProps } from '../types/style/LayoutProps';
-import { ColorProps } from '../types/style/ColorProps';
+import { TypographyVariant } from '@mui/material/styles';
 import { Typography } from '@mui/material';
+import { LinkStyled, LinkStyleProps } from './StyledButton';
 
-export interface LinkStyleProps
-  extends LayoutProps,
-    ColorProps {
-    textDecoration: 'none' | 'underline'; 
-  }
-
-const ButtonStyled = styled('a', {
-  shouldForwardProp: (prop) =>
-    ![
-      "width",
-      "height",
-      "padding",
-      "margin",
-      "background",
-      "backgroundHover",
-      "colorText",
-      "colorHover",          
-    ].includes(prop as string),
-})<LinkStyleProps>(({
-  background,
-  backgroundHover,
-  colorText,
-  colorHover,
-  padding, 
-  width,
-  margin,  
-  textDecoration
-}) => ({
-  width: width,
-  cursor: 'pointer',
-  textDecoration: textDecoration,
-  textTransform: 'none',
-  textAlign: 'center',  
-  backgroundColor: background,
-  color: colorText,
-  padding: padding,
-  margin: margin,  
-
-  '&:hover': {
-    backgroundColor: backgroundHover,
-    borderBottom: `1px solid ${colorHover}`,
-    color: colorHover,
-  },
-}));
 
 interface NavigationLinkProps extends LinkStyleProps {  
   url: string;
@@ -119,22 +74,22 @@ interface NavigationLinkProps extends LinkStyleProps {
 
 const NavigationLink: React.FC<NavigationLinkProps> = ({ 
   url, aria_label, background='transparent', backgroundHover,
-  colorText, colorHover, textDecoration = 'none', 
+  color, colorHover, textDecoration = 'none', 
   width, margin='0', padding='0', text, variant = "body1",   }) => {
   
     const backgroundColor : string = background;
     const backgroundColorHover : string = backgroundHover ?? backgroundColor;
-    const color_hover : string = colorHover ? colorHover : (colorText ?? 'black');      
+    const color_hover : string = colorHover ? colorHover : (color ?? 'black');      
     
     if (url.indexOf('http') != -1) {
 
       return (
-        <ButtonStyled 
+        <LinkStyled 
           href={url}
           width={width}
           background={backgroundColor}
           backgroundHover={backgroundColorHover}
-          colorText={colorText} 
+          color={color} 
           colorHover={color_hover}          
           padding={padding}
           margin={margin}
@@ -143,18 +98,18 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({
           target="_blank"          
           rel="noopener noreferrer">
           <Typography variant={variant}>{text}</Typography>
-        </ButtonStyled>
+        </LinkStyled>
       );    
     }
     else{
 
       return (
-        <ButtonStyled
+        <LinkStyled
           href={url} 
           width={width}
           background={backgroundColor}
           backgroundHover={backgroundColorHover}
-          colorText={colorText} 
+          color={color} 
           colorHover={color_hover}         
           padding={padding}
           margin={margin}
@@ -162,7 +117,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({
           textDecoration={textDecoration}                 
         >
           <Typography variant={variant}>{text}</Typography>
-        </ButtonStyled>
+        </LinkStyled>
       );  
     }        
 };

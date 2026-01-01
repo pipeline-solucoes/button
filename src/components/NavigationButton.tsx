@@ -1,68 +1,10 @@
 'use client';
 
 import React from 'react';
-import { styled, TypographyVariant } from '@mui/material/styles';
-import { ButtonStyleProps } from './StyledButton';
-import { COMMON_STYLE_FORWARD_PROPS } from '../types/CommonForwardProps';
-import { Typography } from '@mui/material';
+import { TypographyVariant } from '@mui/material/styles';
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
-import { ButtonKind, PipelineSolucoesButtonTokens } from '@pipelinesolucoes/theme';
-
-const ButtonStyled = styled('a', {
-  shouldForwardProp: (prop) =>
-    ![ 'kind', ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
-})<ButtonStyleProps>(
-  ({
-    theme,
-    kind,
-    background,
-    backgroundHover,
-    colorText,
-    colorHover,
-    padding,
-    borderRadius,
-    border,
-    width,
-    margin,
-    boxShadow,
-  }) => {
-
-    let tokens: PipelineSolucoesButtonTokens | undefined;
-    switch (kind) {
-    case "primary":
-    case "secondary":
-    case "tertiary":
-    case "delete":
-      tokens = theme.pipelinesolucoes?.buttons?.[kind];
-      break;
-    }
-    
-
-    return {
-      width: width ?? 'auto',      
-      margin: margin ?? '0',
-      padding: tokens ? tokens.padding : padding,
-
-      borderRadius: tokens ? tokens.borderRadius : borderRadius,
-      boxShadow: tokens ? tokens.boxShadow : boxShadow,
-      border,
-      textDecoration: 'none',
-      textTransform: 'none',
-      cursor: 'pointer',
-      textAlign: 'center',
-
-      background: tokens ? tokens.background : background,
-      color: tokens ? tokens.color : colorText,
-
-      '&:hover': {
-        background: tokens
-          ? tokens.backgroundHover
-          : backgroundHover ?? background,
-        color: tokens ? tokens.colorHover : colorHover ?? colorText,
-      },
-    };
-  }
-);
+import { ButtonKind } from '@pipelinesolucoes/theme';
+import { ButtonNavigationStyled } from './StyledButton';
 
 interface NavigationButtonProps extends CommonStyleProps  {
   kind?: ButtonKind;
@@ -123,7 +65,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   aria_label,
   background,
   backgroundHover,
-  colorText,
+  color,
   colorHover,
   borderRadius = '0',
   border = 'none',
@@ -131,17 +73,18 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   width,
   margin = '0',
   padding = '8px 24px',
-  variant = "body1",  
+  variant,  
 }) => {
+
   if (url.includes('http')) {
     return (
-      <ButtonStyled
+      <ButtonNavigationStyled
         kind={kind}
         href={url}
         width={width}
         background={background}
         backgroundHover={backgroundHover}
-        colorText={colorText}
+        color={color}
         colorHover={colorHover}
         borderRadius={borderRadius}
         border={border}
@@ -151,20 +94,21 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         boxShadow={boxShadow}
+        variant={variant}
       >
-        <Typography variant={variant}>{text}</Typography>
-      </ButtonStyled>
+        {text}
+      </ButtonNavigationStyled>
     );
   }
 
   return (
-    <ButtonStyled
+    <ButtonNavigationStyled
       kind={kind}
       href={url}
       width={width}
       background={background}
       backgroundHover={backgroundHover}
-      colorText={colorText}
+      color={color}
       colorHover={colorHover}
       borderRadius={borderRadius}
       border={border}
@@ -172,9 +116,10 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
       margin={margin}
       aria-label={aria_label}
       boxShadow={boxShadow}
-    >
-      <Typography variant={variant}>{text}</Typography>
-    </ButtonStyled>
+      variant={variant}
+    >    
+      {text}
+    </ButtonNavigationStyled>
   );
 };
 
