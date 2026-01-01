@@ -1,22 +1,20 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import { StyledButtonKind } from "./StyledButton";
-import { TypographyVariant } from "@mui/material/styles";
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
 import { ButtonKind } from "@pipelinesolucoes/theme";
+import { TypographyVariant } from "@mui/material";
 
-export interface ActionButtonProps extends CommonStyleProps {
+export interface SubmitButtonProps extends CommonStyleProps {
   kind?: ButtonKind;  
   text: string;
-  variant?: TypographyVariant;
   aria_label: string;
   icon?: React.ReactNode;
-  disabled?: boolean;    
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;  
+  disabled?: boolean;  
+  variant?: TypographyVariant;    
 }
 
 /**
- * Botão estilizado baseado no tema e com tipografia configurável via `variant`.
+ * Botão de submit estilizado baseado no tema e com tipografia configurável via `variant`.
  * 
  *  Uso da prop `kind`:
  * - A prop `kind` aplica estilos automaticamente a partir dos tokens
@@ -42,20 +40,19 @@ export interface ActionButtonProps extends CommonStyleProps {
  * @param {string} colorHover Cor do texto no hover.
  * @param {string} [borderRadius="0"] Raio da borda.
  * @param {string} [boxShadow="none"] Sombra do botão.
- * @param {Function} onClick Evento de clique.
  * @param {string} aria_label Texto para acessibilidade.
  * @param {TypographyVariant} [variant="body1"] Variante da tipografia usada no texto.
  *
  * @example
  * ```tsx
- * <ActionButton
+ * <SubmitButton
  *   text="Enviar"
  *   variant="h6"
  *   onClick={() => console.log("clicou")}
  * />
  * ```
  */
-const ActionButton: React.FC<ActionButtonProps> = ({
+const SubmitButton: React.FC<SubmitButtonProps> = ({
   kind = "none",
   width = "auto",
   height = "auto",
@@ -64,7 +61,6 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   text,
   icon,
   disabled = false,
-  onClick,
   background = "transparent",
   backgroundHover,
   color,
@@ -74,16 +70,17 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   variant,
   aria_label
 }) => {
+
   return (
     <StyledButtonKind
+      type="submit"
       kind={kind}
       width={width}
       height={height}
       padding={padding}
       margin={margin}
       disabled={disabled}
-      startIcon={icon}
-      onClick={onClick}
+      startIcon={icon}      
       background={background}
       backgroundHover={backgroundHover}
       colorText={color}
@@ -98,5 +95,5 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   );
 };
 
-ActionButton.displayName = "ActionButton";
-export default ActionButton;
+SubmitButton.displayName = "SubmitButton";
+export default SubmitButton;

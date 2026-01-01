@@ -6,6 +6,7 @@ import { Button, styled, TypographyVariant } from "@mui/material";
 
 export interface ButtonStyleProps extends CommonStyleProps {
   kind: ButtonKind;
+  variantButton?: TypographyVariant | undefined;
 }
 
 export const StyledButtonKind = styled(Button, {
@@ -13,7 +14,7 @@ export const StyledButtonKind = styled(Button, {
  })
   <ButtonStyleProps>
   (({ theme, kind = "primary", width, height, padding, margin, background, backgroundHover, 
-    colorText, colorHover, borderRadius, boxShadow, variant }) => {
+    colorText, colorHover, borderRadius, boxShadow, variantButton }) => {
     
     let tokens: PipelineSolucoesButtonTokens | undefined;
     switch (kind) {
@@ -26,7 +27,7 @@ export const StyledButtonKind = styled(Button, {
     }
 
     const typo =
-    (variant && theme.typography[variant]) ??
+    (variantButton && theme.typography[variantButton]) ??
     theme.pipelinesolucoes?.buttons?.typography ??
     theme.typography.body1;
 
@@ -83,7 +84,7 @@ export const ButtonNavigationStyled = styled('a', {
     width,
     margin,
     boxShadow,
-    variant
+    variantButton
   }) => {
 
     let tokens: PipelineSolucoesButtonTokens | undefined;
@@ -97,7 +98,7 @@ export const ButtonNavigationStyled = styled('a', {
     }
 
     const typo =
-    (variant && theme.typography[variant]) ??
+    (variantButton && theme.typography[variantButton]) ??
     theme.pipelinesolucoes?.buttons?.typography ??
     theme.typography.body1;
     

@@ -19,8 +19,8 @@ A biblioteca inclui os seguintes componentes:
 - **DownloadButton**
   Componente que renderiza um link estilizado como botão para **download de arquivos** usando a tag `<a>` com o atributo `download`, permitindo customização visual via props.  
 
-- **FormButtonGroup**  
-  Agrupador de botões *Deletar*, *Cancelar* e *Salvar* para uso **dentro de formulários**.
+- **SubmitButton**  
+  Botão de submit estilizado, baseado no tema e com tipografia configurável via `variant`.
 
 - **NavigationButton**  
   Botão de navegação reutilizável baseado em link (`<a>`), estilizado com Material UI.

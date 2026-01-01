@@ -94,7 +94,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         boxShadow={boxShadow}
-        variant={variant}
+        variantButton={variant}
       >
         {text}
       </ButtonNavigationStyled>
@@ -116,7 +116,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
       margin={margin}
       aria-label={aria_label}
       boxShadow={boxShadow}
-      variant={variant}
+      variantButton={variant}
     >    
       {text}
     </ButtonNavigationStyled>
