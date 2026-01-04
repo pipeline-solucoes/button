@@ -1,7 +1,6 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import { StyledButtonKind } from "./StyledButton";
-import { TypographyVariant } from "@mui/material/styles";
+import { TypographyVariant, useTheme } from "@mui/material/styles";
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
 import { ButtonKind } from "@pipelinesolucoes/theme";
 
@@ -57,23 +56,24 @@ export interface ActionButtonProps extends CommonStyleProps {
  */
 const ActionButton: React.FC<ActionButtonProps> = ({
   kind = "none",
-  width = "auto",
-  height = "auto",
-  padding = "12px 20px",
-  margin = "0",
+  width,
+  height,
+  padding,
+  margin,
   text,
   icon,
   disabled = false,
   onClick,
-  background = "transparent",
+  background,
   backgroundHover,
   color,
   colorHover,
-  borderRadius = "0",
-  boxShadow = "none",
+  borderRadius,
+  boxShadow,
   variant,
   aria_label
 }) => {
+
   return (
     <StyledButtonKind
       kind={kind}

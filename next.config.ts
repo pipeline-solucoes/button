@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
   },
 
   // Transpila pacotes específicos
-  transpilePackages: ["pipesol-button"],
+  transpilePackages: ["button"],
 
   // Configura saída standalone
   output: "standalone",

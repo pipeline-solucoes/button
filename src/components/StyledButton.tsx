@@ -13,24 +13,27 @@ export const StyledButtonKind = styled(Button, {
   shouldForwardProp: (prop) => !["kind", ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
  })
   <ButtonStyleProps>
-  (({ theme, kind = "primary", width, height, padding, margin, background, backgroundHover, 
+  (({ theme, kind='none', width, height, padding, margin, background, backgroundHover, 
     colorText, colorHover, borderRadius, boxShadow, variantButton }) => {
     
-    let tokens: PipelineSolucoesButtonTokens | undefined;
+    let tokens: PipelineSolucoesButtonTokens | undefined = undefined;
     switch (kind) {
-    case "primary":
-    case "secondary":
-    case "tertiary":
-    case "delete":
-      tokens = theme.pipelinesolucoes?.buttons?.variants?.[kind];
-      break;
+      case "none":
+        tokens = undefined;
+        break; 
+      case "primary":
+      case "secondary":
+      case "tertiary":
+      case "delete":
+        tokens = theme.pipelinesolucoes?.buttons?.variants?.[kind];
+        break;   
     }
 
     const typo =
     (variantButton && theme.typography[variantButton]) ??
+    tokens?.typography ?? 
     theme.pipelinesolucoes?.buttons?.typography ??
     theme.typography.body1;
-
 
     return {
       // Dimensões
@@ -72,7 +75,7 @@ export const ButtonNavigationStyled = styled('a', {
 })<ButtonStyleProps>(
   ({
     theme,
-    kind,
+    kind='none',
     height,
     background,
     backgroundHover,
@@ -87,14 +90,17 @@ export const ButtonNavigationStyled = styled('a', {
     variantButton
   }) => {
 
-    let tokens: PipelineSolucoesButtonTokens | undefined;
+    let tokens: PipelineSolucoesButtonTokens | undefined = undefined;
     switch (kind) {
-    case "primary":
-    case "secondary":
-    case "tertiary":
-    case "delete":
-      tokens = theme.pipelinesolucoes?.buttons?.variants?.[kind];
-      break;
+      case "none":
+        tokens = undefined;
+        break; 
+      case "primary":
+      case "secondary":
+      case "tertiary":
+      case "delete":
+        tokens = theme.pipelinesolucoes?.buttons?.variants?.[kind];
+        break;   
     }
 
     const typo =

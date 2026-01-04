@@ -67,12 +67,12 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   backgroundHover,
   color,
   colorHover,
-  borderRadius = '0',
-  border = 'none',
-  boxShadow = 'none',
+  borderRadius,
+  border,
+  boxShadow,
   width,
-  margin = '0',
-  padding = '8px 24px',
+  margin,
+  padding,
   variant,  
 }) => {
 
