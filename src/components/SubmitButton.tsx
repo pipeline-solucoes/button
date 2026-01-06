@@ -11,6 +11,7 @@ export interface SubmitButtonProps extends CommonStyleProps {
   icon?: React.ReactNode;
   disabled?: boolean;  
   variant?: TypographyVariant;    
+  form?: string;
 }
 
 /**
@@ -68,12 +69,14 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
   borderRadius = "0",
   boxShadow = "none",
   variant,
-  aria_label
+  aria_label,
+  form
 }) => {
 
   return (
     <StyledButtonKind
       type="submit"
+      form={form}
       kind={kind}
       width={width}
       height={height}
