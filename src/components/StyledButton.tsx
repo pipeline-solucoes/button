@@ -10,7 +10,7 @@ export interface ButtonStyleProps extends CommonStyleProps {
 }
 
 export const StyledButtonKind = styled(Button, {
-  shouldForwardProp: (prop) => !["kind", ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
+  shouldForwardProp: (prop) => !["kind", "variantButton", ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
  })
   <ButtonStyleProps>
   (({ theme, kind='none', width, height, padding, margin, background, backgroundHover, 
@@ -71,7 +71,7 @@ export const StyledButtonKind = styled(Button, {
 
 export const ButtonNavigationStyled = styled('a', {
   shouldForwardProp: (prop) =>
-    ![ 'kind', ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
+    ![ 'kind', 'variantButton', ...COMMON_STYLE_FORWARD_PROPS ].includes(prop as string),
 })<ButtonStyleProps>(
   ({
     theme,
