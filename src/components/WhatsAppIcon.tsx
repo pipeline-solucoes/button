@@ -12,6 +12,11 @@ const StyledBox = styled(Box, {
   borderRadius: '50%',
   display: 'inline-block',
   border: '2px solid transparent',
+
+  position: 'fixed',
+  right: 24,
+  bottom: 24,
+  zIndex: 1300, // acima de conteúdo comum (MUI AppBar/Drawer etc)
 }));
 
 /**
