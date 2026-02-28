@@ -22,8 +22,12 @@ A biblioteca inclui os seguintes componentes:
 - **SubmitButton**  
   Botão de submit estilizado, baseado no tema e com tipografia configurável via `variant`.
 
-- **NavigationButton**  
-  Botão de navegação reutilizável baseado em link (`<a>`), estilizado com Material UI.
+- **WhatsAppFlutuante**  
+  Componente flutuante de ação rápida para contato via WhatsApp.
+  Renderiza um botão circular fixo na tela utilizando o `Fab` do Material UI,
+  contendo o ícone oficial do WhatsApp. Ao ser clicado, abre uma nova aba
+  direcionando para a URL `https://wa.me/{whatsapp}`, iniciando a conversa
+  com o número informado.
 
 - **NavigationLink**  
   Link de navegação reutilizável, estilizado com Material UI.

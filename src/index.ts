@@ -7,7 +7,7 @@ export { default as DownloadButton} from './components/DownloadButton';
 export { default as NavigationLink} from './components/NavigationLink';
 export { default as ScrollToTopButton} from './components/ScrollToTopButton';
 export { default as WhatsAppButton} from './components/WhatsAppButton';
-export { default as WhatsAppIcon} from './components/WhatsAppIcon';
+export { default as WhatsAppFlutuante} from './components/WhatsAppFlutuante';
 export { default as ActionButton } from "./components/ActionButton";
 export { default as SubmitButton } from "./components/SubmitButton";
 
