@@ -10,12 +10,11 @@ const StyledBox = styled(Box, {
   backgroundColor: background_color,
   padding: '4px',
   borderRadius: '50%',
-  display: 'inline-block',
   border: '2px solid transparent',
 
   position: 'fixed',
-  right: 24,
-  bottom: 24,
+  right: '40px',
+  bottom: '24px',
   zIndex: 1300, // acima de conteúdo comum (MUI AppBar/Drawer etc)
 }));
 
