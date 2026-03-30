@@ -12,6 +12,7 @@ interface NavigationButtonProps extends CommonStyleProps  {
   text: string;
   aria_label: string;
   url: string;  
+  abrirHTTPNovaAba?: boolean;
 }
 
 /**
@@ -45,6 +46,7 @@ interface NavigationButtonProps extends CommonStyleProps  {
  * @param {string} [padding="8px 24px"] Espaçamento interno.
  * @param {string} [text] Texto do botão.
  * @param {TypographyVariant} [variant="body1"] Variante da tipografia usada no texto.
+ * @param {boolean} [abrirHTTPNovaAba="true"] Abrir link http em uma nova aba.
  *
  * @example
  * ```tsx
@@ -74,9 +76,10 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   margin,
   padding,
   variant,  
+  abrirHTTPNovaAba = true
 }) => {
 
-  if (url.includes('http')) {
+  if (url.includes('http') && abrirHTTPNovaAba) {
     return (
       <ButtonNavigationStyled
         kind={kind}
