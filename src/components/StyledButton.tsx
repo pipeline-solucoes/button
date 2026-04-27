@@ -14,7 +14,7 @@ export const StyledButtonKind = styled(Button, {
  })
   <ButtonStyleProps>
   (({ theme, kind='none', width, height, padding, margin, background, backgroundHover, 
-    colorText, colorHover, borderRadius, boxShadow, variantButton }) => {
+    colorText, colorHover, borderRadius, boxShadow, variantButton, border }) => {
     
     let tokens: PipelineSolucoesButtonTokens | undefined = undefined;
     switch (kind) {
@@ -48,6 +48,7 @@ export const StyledButtonKind = styled(Button, {
       // Visual
       textTransform: "none",      
       borderRadius: tokens ? tokens.borderRadius : borderRadius,
+      border: tokens ? tokens.border : border,
       boxShadow: tokens ? tokens.boxShadow : boxShadow,
 
       // Cores
@@ -109,6 +110,11 @@ export const ButtonNavigationStyled = styled('a', {
     theme.typography.body1;
     
     return {
+
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '16px',
         
       // Dimensões
       width: width ?? 'auto',

@@ -13,6 +13,7 @@ interface NavigationButtonProps extends CommonStyleProps  {
   aria_label: string;
   url: string;  
   abrirHTTPNovaAba?: boolean;
+  icon?: React.ReactNode;
 }
 
 /**
@@ -76,7 +77,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
   margin,
   padding,
   variant,  
-  abrirHTTPNovaAba = true
+  abrirHTTPNovaAba = true,
+  icon
 }) => {
 
   if (url.includes('http') && abrirHTTPNovaAba) {
@@ -97,8 +99,13 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         boxShadow={boxShadow}
-        variantButton={variant}
+        variantButton={variant}        
       >
+        {icon && (
+          <span style={{ display: 'flex', alignItems: 'center' }}>
+            {icon}
+          </span>
+        )}
         {text}
       </ButtonNavigationStyled>
     );
@@ -119,8 +126,13 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
       margin={margin}
       aria-label={aria_label}
       boxShadow={boxShadow}
-      variantButton={variant}
+      variantButton={variant}      
     >    
+      {icon && (
+        <span style={{ display: 'flex', alignItems: 'center' }}>
+          {icon}
+        </span>
+      )}
       {text}
     </ButtonNavigationStyled>
   );

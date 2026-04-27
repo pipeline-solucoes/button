@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledButtonKind } from "./StyledButton";
-import { TypographyVariant, useTheme } from "@mui/material/styles";
+import { TypographyVariant } from "@mui/material/styles";
 import { CommonStyleProps } from "../types/style/CommonStyleProps";
 import { ButtonKind } from "@pipelinesolucoes/theme";
 
@@ -11,7 +11,8 @@ export interface ActionButtonProps extends CommonStyleProps {
   aria_label: string;
   icon?: React.ReactNode;
   disabled?: boolean;    
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;  
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  border?: string;  
 }
 
 /**
@@ -71,7 +72,8 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   borderRadius,
   boxShadow,
   variant,
-  aria_label
+  aria_label,
+  border='None'
 }) => {
 
   return (
@@ -92,6 +94,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
       boxShadow={boxShadow}
       aria-label={aria_label}
       variantButton={variant}
+      border={border}
     >
       {text}
     </StyledButtonKind>
